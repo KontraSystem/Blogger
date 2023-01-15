@@ -1,0 +1,5 @@
+"/api": {
+    "target": "https://blogger-be.herokuapp.com/",
+    "secure": false,
+    "changeOrigin": true
+  }

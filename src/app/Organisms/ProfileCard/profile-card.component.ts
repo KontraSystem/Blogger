@@ -43,7 +43,10 @@ export class ProfileCardComponent {
 	}
 
 	updateData() {
-		this.userService.updateUser({ id: this.userData.id, email: this.email.field.value, username: this.username.field.value }).subscribe((res) => {
+		const email = this.email.field.value
+		const username = this.username.field.value
+		
+		this.userService.updateUser({ id: this.userData.id, email: email, username: username }).subscribe((res) => {
 			this.toastrService.show("User data reset", "Success", this.config)
 		})	
 	}

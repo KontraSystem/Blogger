@@ -44,6 +44,7 @@ export class NewPostComponent {
 				full_text: this.full_text.field.value,
 			}).subscribe((res) => {
 				this.toastrService.show("Post updated", "Post Saved", this.config)
+				this.router.navigate(["/"])
 			})
 		} else {
 			this.postService.createNewPost({

@@ -29,7 +29,13 @@ export class RegisterDialogComponent {
     		username: this.username.field.value,
     		email: this.email.field.value,
     		password: this.password.field.value
-    	}).subscribe(() => this.ref.close())
+    	}).subscribe((data) => {
+    		this.userService.setUser({ 
+				...data.data,
+				token: data.token
+			})
+    		this.ref.close(data.success)
+    	})
     }
 	}
 }

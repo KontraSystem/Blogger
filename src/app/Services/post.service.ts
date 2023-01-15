@@ -19,6 +19,8 @@ type PostDetail = {
 })
 export class PostService {
 
+  rootUrl = "https://blogger-be.herokuapp.com/"
+
   detailPost: PostDetail
 
   constructor(private http: HttpClient, private userService: UserService) { 
@@ -41,7 +43,7 @@ export class PostService {
   }
 
   getAllPosts(): Observable<any> {
-    return this.http.get<any>('api/posts');
+    return this.http.get<any>(this.rootUrl+'api/posts');
   }
  
   createNewPost(data: {
@@ -50,25 +52,25 @@ export class PostService {
     full_text: string,
     user_id: number
   }): Observable<any> {
-    return this.http.post<any>('api/posts/new-post', data)
+    return this.http.post<any>(this.rootUrl+'api/posts/new-post', data)
   }
 
   getAllUserPosts(): Observable<any> {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", this.userService.getUserId() ?? -1);
-    return this.http.get<any>('api/posts/user-posts', { params: queryParams })
+    return this.http.get<any>(this.rootUrl+'api/posts/user-posts', { params: queryParams })
   }
 
   getPostDetails(id: number): Observable<any> {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id",id);
-    return this.http.get<any>('api/posts/post-details', { params: queryParams })
+    return this.http.get<any>(this.rootUrl+'api/posts/post-details', { params: queryParams })
   }
 
   deletePost(id: number): Observable<any> {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", id);
-    return this.http.delete<any>('api/posts/post-details/delete', { params: queryParams })
+    return this.http.delete<any>(this.rootUrl+'api/posts/post-details/delete', { params: queryParams })
   }
 
   editPost(data: {
@@ -77,6 +79,6 @@ export class PostService {
     description: string,
     full_text: string,
   }): Observable<any> {
-    return this.http.put<any>('api/posts/post-details/edit', data)
+    return this.http.put<any>(this.rootUrl+'api/posts/post-details/edit', data)
   }
 }

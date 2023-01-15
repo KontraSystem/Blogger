@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 })
 export class UserService {
 
-
+  rootUrl = "http://localhost:3100/"
 
   constructor(private http: HttpClient) { 
     this.register = this.register.bind(this)
@@ -17,7 +17,7 @@ export class UserService {
   getUserData(): Observable<any> {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("id", this.getUserId() ?? -1);
-    return this.http.get<any>("api/auth/user", { params: queryParams })
+    return this.http.get<any>(this.rootUrl+"api/auth/user", { params: queryParams })
   }
 
   register(data: {
@@ -25,17 +25,15 @@ export class UserService {
     username: string,
     password: string
   }): Observable<any> {
-    console.log("register", data)
     
-    return this.http
-    .post<any>('api/auth/register', data)
+    return this.http.post<any>(this.rootUrl+'api/auth/register', data)
   }
 
   login(data: {
     email: string,
     password: String
   }): Observable<any> {
-    return this.http.post<any>('api/auth/login', data)
+    return this.http.post<any>(this.rootUrl+'api/auth/login', data)
   }
 
   updateUser(data: {
@@ -43,11 +41,11 @@ export class UserService {
     email: string,
     username: string
   }): Observable<any> {
-    return this.http.put<any>('api/auth/update-user', data)
+    return this.http.put<any>(this.rootUrl+'api/auth/update-user', data)
   }
 
   resetPassword(data: { id: number, password: string }): Observable<any> {
-    return this.http.put<any>('api/auth/reset-password', { id: data.id, pass: data.password })
+    return this.http.put<any>(this.rootUrl+'api/auth/reset-password', { id: data.id, pass: data.password })
   }
 
   setUser(data: {

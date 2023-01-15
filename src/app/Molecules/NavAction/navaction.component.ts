@@ -47,15 +47,15 @@ export class NavActionComponent {
 
   openLoginDialog() {
     this.dialogService.open(LoginDialogComponent)
-    .onClose.subscribe(value => {
-      window.location.reload()
+    .onClose.subscribe(success => {
+      if(success) window.location.reload()
     })
   }
 
   openRegisterDialog() {
     this.dialogService.open(RegisterDialogComponent)
-    .onClose.subscribe(value => {
-      window.location.reload
+    .onClose.subscribe(success => {
+      if(success) window.location.reload()
     })
   }
 
