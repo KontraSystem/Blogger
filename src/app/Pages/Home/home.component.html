@@ -1,0 +1,11 @@
+<nb-list>
+	<nb-list-item routerLink="post/details" *ngFor="let post of posts">
+		<post 
+			style="width:100%;" 
+			(click)="this.getPostDetail(post.id)" 
+			[title]="post.title" 
+			[username]="post.username" 
+			[description]="post.description" 
+		></post>
+	</nb-list-item>
+</nb-list>

@@ -1,0 +1,15 @@
+<nb-card>
+	<nb-card-header>Settings</nb-card-header>	
+	<nb-card-body>
+		<div style="display:flex; flex-direction: column; align-items: center;">
+			<input-field #username fieldName="username" text={{userData.username}} type="text" label="Username">
+			</input-field>	
+    	<input-field #email fieldName="email" text={{userData.email}} type="email" label="E-mail"></input-field>
+			<logo-button (click)="this.resetPasswordDialog()" buttonIcon="lock-outline" label="Reset Password" ></logo-button>	
+		</div>
+	</nb-card-body>
+	<nb-card-footer>
+		<action-button (click)="this.back()" routerLink="/posts" buttonLabel="Back" ></action-button>
+		<action-button (click)="this.updateData()" buttonLabel="Update" ></action-button>	
+	</nb-card-footer>
+</nb-card>

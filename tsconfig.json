@@ -9,6 +9,7 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "strictPropertyInitialization": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
@@ -19,10 +20,17 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
+    "paths": {
+      "Atoms/*": ["src/app/Atoms/*"],
+      "Molecules/*": ["src/app/Molecules/*"],
+      "Organisms/*": ["src/app/Organisms/*"],
+      "Pages/*": ["src/app/Pages/*"],
+      "Services/*": ["src/app/Services/*"]
+    },
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

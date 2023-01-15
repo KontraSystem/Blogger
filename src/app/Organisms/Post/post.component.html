@@ -1,0 +1,19 @@
+<nb-card>
+	<nb-card-header>
+		<div style="display: flex; flex-direction: column;">
+			<h5>{{title}}</h5>
+		 	<div style="display: flex;" >
+		 		<p style="margin: 0.5rem;" >by {{user}}</p>
+		 		<p style="margin: 0.5rem;">{{date | date:'dd-MM-yyyy'}}</p>
+		 	</div>
+		</div>
+	</nb-card-header>	
+	<nb-card-body>
+		{{description}}
+	</nb-card-body>
+	<nb-card-footer >
+		<action-button *ngIf="isDetail" (click)="this.back()"  buttonLabel="Back" ></action-button>
+		<logo-button *ngIf="userPosts" (click) ="this.editPost()" buttonIcon="edit-outline" size="medium" label="Edit"></logo-button>
+		<logo-button *ngIf="userPosts" (click)="this.deletePost()" buttonIcon="trash-outline" size="medium" label="Delete"></logo-button>
+	</nb-card-footer>
+</nb-card>

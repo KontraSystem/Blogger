@@ -1,0 +1,12 @@
+<div id="fieldContainer" >
+	<label for={{fieldName}}>{{label}}</label>
+	<nb-form-field>
+		<input id={{fieldName}} placeholder={{text}} fullWidth type={{this.getInputType()}} nbInput [formControl]="field" >
+			<button *ngIf="type==='password'"  nbSuffix nbButton ghost (click)="toggleShowPassword()">
+	     <nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'"
+	              pack="eva"
+	              [attr.aria-label]="showPassword ? 'hide password' : 'show password'">
+	     </nb-icon>
+	   </button>
+	</nb-form-field>
+</div>

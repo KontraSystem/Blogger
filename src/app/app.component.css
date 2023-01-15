@@ -1,0 +1,9 @@
+nav {
+	display: flex !important;
+	justify-content: space-between !important;
+}
+
+body {
+	margin: 0 !important;
+	padding: 0 !important;
+}

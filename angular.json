@@ -13,9 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/blogger",
+            "outputPath": "src/blogger",
             "index": "src/index.html",
             "main": "src/main.ts",
+            
             "polyfills": [
               "zone.js"
             ],
@@ -25,7 +26,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css"
+              "src/styles.css",
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css",
             ],
             "scripts": []
           },
@@ -66,6 +70,10 @@
               "browserTarget": "blogger:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "src/proxy.conf.json",
+            "browserTarget": "blogger:build"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -87,12 +95,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/@nebular/theme/styles/prebuilt/cosmic.css"
+              "src/styles.css",
+              "node_modules/@nebular/theme/styles/prebuilt/default.css",
+              "node_modules/@nebular/theme/styles/prebuilt/dark.css",
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "379f7ecb-d0b2-4d2e-a8f7-0762d9e85996"
   }
 }

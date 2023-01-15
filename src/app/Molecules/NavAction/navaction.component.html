@@ -1,0 +1,17 @@
+<div class="flex-div direction-column space-between height-100" >
+	<div  class="flex-div direction-column ">
+		<nb-menu [items]="profileItems"></nb-menu>
+	</div>
+	<div class="flex-div direction-column align-items-center">
+		<action-button *ngIf="!this.userService.getUserToken()" (click)="openLoginDialog()" buttonLabel="Sign in" ></action-button>
+		<action-button *ngIf="!this.userService.getUserToken()" (click)="openRegisterDialog()" buttonLabel="Register" ></action-button>
+		<action-button *ngIf="this.userService.getUserToken()" (click)="handleLogout()" buttonLabel="Log Out"></action-button>
+	</div>
+</div>
+<ng-template #loginDialog>
+	<login-dialog></login-dialog>
+</ng-template>
+<ng-template #dialog>
+	<login-dialog></login-dialog>
+	<register-dialog></register-dialog>
+</ng-template>

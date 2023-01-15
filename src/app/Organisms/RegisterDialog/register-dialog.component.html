@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-header>Register</nb-card-header>  
+  <nb-card-body>
+    <input-field #email fieldName="email" type="email" label="E-mail"></input-field>
+    <input-field #username fieldName="username" type="text" label="Username"></input-field>
+    <input-field #password fieldName="password" label="Password" type="password"></input-field>
+    <input-field #repassword fieldName="repassword" label="Re-enter password" type="password"></input-field>
+  </nb-card-body>
+  <nb-card-footer style="display:flex;flex-direction: column; align-items: center;">
+    <div style="display:flex;">
+      <action-button (click)="this.cancel()" buttonLabel="Cancel" ></action-button>
+      <action-button (click)="this.submit()"  buttonLabel="Register" ></action-button>
+    </div>
+    <a>Already have an account? Login</a>
+  </nb-card-footer>
+</nb-card>

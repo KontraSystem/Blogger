@@ -1,0 +1,11 @@
+<nb-card>
+  <nb-card-header>Welcome</nb-card-header>  
+  <nb-card-body>
+    <input-field #email fieldName="email" type="email" label="E-mail"></input-field>
+    <input-field #password fieldName="password" label="Password" type="password"></input-field>
+  </nb-card-body>
+  <nb-card-footer>
+    <action-button (click)="this.cancel()" buttonLabel="Cancel" ></action-button>
+    <action-button (click)="this.submit()" buttonLabel="Login" ></action-button>
+  </nb-card-footer>
+</nb-card>

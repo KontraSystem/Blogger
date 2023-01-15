@@ -1,0 +1,12 @@
+<nb-list>
+	<nb-list-item *ngFor="let post of posts">
+		<post 
+			style="width:100%;"
+			[userPosts]="true"
+			[id]="post.id"
+			[title]="post.title" 
+			[username]="post.username" 
+			[description]="post.description" 
+		></post>
+	</nb-list-item>
+</nb-list>

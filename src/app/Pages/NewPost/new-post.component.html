@@ -1,0 +1,16 @@
+<nb-card>
+  <nb-card-header>New Post</nb-card-header>  
+  <nb-card-body>
+    <div id="new-post-container" >
+      <input-field style="width:100%" #title text={{post_title}} fieldName="title" type="text" label="Title"></input-field>
+      <input-area style="width:100%" #description text={{post_description}} fieldName="description" label="Description"></input-area>
+      <input-area style="width:100%" #post text={{post_full_text}} fieldName="full_text" label="Post"></input-area>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <div style="display: flex;">
+      <action-button routerLink="" (click)="this.cancel()" buttonLabel="Cancel" ></action-button>
+      <action-button routerLink="" (click)="this.submit()" buttonLabel="Submit" ></action-button>
+    </div>
+  </nb-card-footer>
+</nb-card>
