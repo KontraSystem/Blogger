@@ -21,7 +21,6 @@ export class EditPostComponent {
 	constructor(private postService: PostService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
 	ngOnInit() {
-		console.log(this.postService.getDetails())
 		this.postData = this.postService.getDetails()
 	}
 

@@ -43,7 +43,6 @@ export class PostComponent {
 
   editPost() {
     this.postService.getPostDetails(this.id).subscribe((res) => {
-      console.log("res", res)
       this.postService.setDetails(res)
       this.router.navigate(["post/edit"])
     })

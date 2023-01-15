@@ -7,7 +7,7 @@ import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 })
 export class UserService {
 
-  rootUrl = "http://localhost:3100/"
+  rootUrl = "https://blogger-be.herokuapp.com/"
 
   constructor(private http: HttpClient) { 
     this.register = this.register.bind(this)

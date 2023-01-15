@@ -26,7 +26,6 @@ export class UserPostsComponent {
 			username: string,
 			modified_at: Date
 		}>) => {
-			console.log(res)
 			this.posts = res
 		})
 	}
