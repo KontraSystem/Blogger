@@ -1,6 +1,7 @@
 {
   "/api": {
-    "target": "http://localhost:3100",
-    "secure": false
+    "target": "https://blogger-be.herokuapp.com/",
+    "secure": true,
+    "changeOrigin": true
   },
 }
